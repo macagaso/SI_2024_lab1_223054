@@ -1,0 +1,79 @@
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace$ mkdir SI_2024_lab1_223054
+#kreiranje na datoteka
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace$ cd SI_2024_lab1_223054
+#vlez vo datoteka
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git init
+#komanda za inicijaliziranje na nov git repozitorium
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git remote add origin git@github.com:macagaso/SI_2024_lab1_223054.git
+#ostvaruvanje na konekcija pomegju mojot lokalen git repozitorium i remote git repozitorium
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git remote -v
+#proverka za dali e ostvarena konekcija
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano README.md
+#kreiranje na nov README.md file
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git add README.md
+#go stavame na stage(mora da bide postaven barem ednash na stage za da mozheme da pravime commit)
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Initial commit" 
+#pravime commit na fajlot na master grankata
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git add --all
+#otkako kje gi prezemam trite fajlovi, potrebno e site da gi dodadam ("add") na stage
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Add starter code"
+#pravam commit na glavnata granka na sekoj od addnatite fajlovi
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git branch -M master
+#ja preimenuvam glavnata granka
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git push -u origin master
+#site commiti shto gi imam lokalno gi prefrlam na origin remote-grankata
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git branch bug1
+#pravam edna granka na lokalniot repozitorium
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git branch bug2
+#pravam vtora granka na lokalniot repozitorium
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout bug1
+#se prefrlam na prvata granka bug1
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano SILab1_1.java
+#ja popravam greshkata 
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Fix wrong condition in filterOddLengthStrings" SILab1_1.java
+#pravam commit so koregiranata sodrzhina
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout bug2
+#se preflam na vtorata granka bug2
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano SILab1_2.java
+#ja popravam greshkata vo fajlot 
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Fix wrong condition in makeBigStringFrom" SILab1_2.java
+#pravam commit so koregiranata sodrzhina
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout bug1
+#se vrakjam povtorno na bug1 grankata
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano SILab1Main.java
+#dodavam kod vo klasata SILab1Main
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Call method filterOddLengthStrings in main class" SILab1Main.java
+#commit so promeneta sodrzhina
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout bug2
+#odam na grankata bug2
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano SILab1Main.java
+#promena na kodot vo klasata SILab1.Main
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Call method makeBigStringFrom in main class" SILab1Main.java
+#commit so promenite na grankata bug2
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git push --all
+#git gi pushnuva site granki od lokalniot repozitorium na remote-repozitoriumot
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout master
+#se vrakjame nazad na master grankata
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git merge bug1
+#probuvame da ja spoime grankata bug1 so master grankata na lokalniot repozitorium, se javuva konflikt zaradi razlichna sodrzina vo istiot fajl no se spravuvame so istiot taka shto ja ostavame promenata vo sodrzhinata od grankata bug1
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git push --all
+#pravime push na site commiti od lokalniot repozitorium na remote repozitoriumot 
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout bug2
+#se preflame na grankata bug2
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git rebase master
+#se javuva konfilkt za koj za da go reshime treba da odluchime shto kje ni ostane vo sodrzhinata 
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano SILab1Main.java
+#pishuvame kako sakame da bide sodrzhinata na nashata datoteka
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git add SILab1Main.java
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git rebase --continue
+#go prodolzhuva procesot na rebase
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git checkout master
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git merge bug2
+#spojuvanje na grankata bug2 so master
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git push origin bug2 --force
+#sinhronizacija na lokalnite granki so grankite na remote repozitoriumot
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano logs.txt
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ nano 223054.txt
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git add --all
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git commit -m "Final commit"
+marija_new@DESKTOP-QUSVPCT:~/GitWorkspace/SI_2024_lab1_223054$ git push --all

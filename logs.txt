@@ -1,0 +1,6 @@
+f819ae5 (HEAD, origin/bug2, bug2) Call method makeBigStringFrom in main class
+775b59a Fix wrong condition in makeBigStringFrom
+414ce40 (origin/bug1, bug1) Call method filterOddLengthStrings in main class
+55afa64 Fix wrong condition in filterOddLengthStrings
+eb17d3b Add starter code
+a36d31d Initial commit
